@@ -1,0 +1,36 @@
+.VisualizationAccumulators {
+  padding: 10px;
+  font-family: 'Proxima Nova', sans-serif;
+
+  &,
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+
+  .Header {
+    padding-bottom: 10px;
+
+    .Title {
+      color: var(--text_main);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  }
+
+  .NoData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+    color: var(--text_secondary);
+
+    .Icon {
+      color: var(--border_secondary);
+      font-size: 100px;
+    }
+  }
+}
