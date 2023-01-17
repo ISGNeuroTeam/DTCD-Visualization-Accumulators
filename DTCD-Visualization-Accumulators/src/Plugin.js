@@ -5,6 +5,7 @@ import {
   EventSystemAdapter,
   StorageSystemAdapter,
   DataSourceSystemAdapter,
+  StyleSystemAdapter,
 } from './../../DTCD-SDK';
 
 import pluginMeta from './Plugin.Meta';
@@ -41,6 +42,7 @@ export class VisualizationAccumulators extends PanelPlugin {
     this.#eventSystem = new EventSystemAdapter('0.4.0', guid);
     this.#eventSystem.registerPluginInstance(this);
     this.#storageSystem = new StorageSystemAdapter('0.5.0');
+    const styleVariables = new StyleSystemAdapter('0.4.0').getCurrentTheme().styleVariables;
 
     this.#dataSourceSystem = new DataSourceSystemAdapter('0.2.0');
     this.#dataSourceSystemGUID = this.getGUID(
@@ -54,6 +56,7 @@ export class VisualizationAccumulators extends PanelPlugin {
         guid,
         logSystem: this.#logSystem,
         interactionSystem,
+        styleVariables,
       }),
       render: h => h(PluginComponent),
     }).$mount(selector);
