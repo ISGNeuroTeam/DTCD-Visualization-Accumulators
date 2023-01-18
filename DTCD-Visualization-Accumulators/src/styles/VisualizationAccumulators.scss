@@ -44,6 +44,7 @@
 
   .Bar {
     display: flex;
+    gap: 10px;
     padding: 0 10px;
     line-height: 1.5rem;
 
@@ -51,6 +52,7 @@
       flex-grow: 1;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .Value {
