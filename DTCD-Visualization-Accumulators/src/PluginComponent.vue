@@ -17,7 +17,7 @@
           :title="`max = ${max}`"
           :style="'background: linear-gradient(to right, '
                   +`${color} ${value/max*100}%, `
-                  +`var(--border_secondary) ${value/max*100}%);`
+                  +`var(--text_secondary) ${value/max*100}%);`
           "
         >
           <span class="Label">{{label}}</span>
