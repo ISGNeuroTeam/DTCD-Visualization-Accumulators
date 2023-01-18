@@ -201,7 +201,9 @@ export class VisualizationAccumulators extends PanelPlugin {
 
     for (const [prop, value] of Object.entries(newState)) {
       if (!vueNamesFields.includes(prop)) continue;
-      this.#vueComponent[prop] = value;
+      
+      if (prop === 'dataset') this.loadData(value);
+      else this.#vueComponent[prop] = value;
     }
   }
 }
