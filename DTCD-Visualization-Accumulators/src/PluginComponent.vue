@@ -42,21 +42,19 @@ export default {
     setDataset(data) {
       if (!Array.isArray(data)) return false;
 
+      this.dataset = [];
+      
       data.forEach((dataItem) => {
-        let findedDataSetItem = this.dataset.find((dataSetItem) => {
-          return (dataItem.label === dataSetItem.label);
-        });
-
-        if (!dataItem.color) dataItem.color = 'var(--button_primary)';
+        if (!dataItem.color) {
+          dataItem.color = 'var(--button_primary)';
+        }
         else {
-          if (this.$root.styleVariables[dataItem.color]) dataItem.color = `var(--${color})`;
+          if (this.$root.styleVariables[dataItem.color]) {
+            dataItem.color = `var(--${color})`;
+          }
         }
 
-        if (findedDataSetItem) {
-          Object.assign(findedDataSetItem, dataItem);
-        } else {
-          this.dataset.push({...dataItem});
-        }
+        this.dataset.push({...dataItem});
       });
     },
   }
