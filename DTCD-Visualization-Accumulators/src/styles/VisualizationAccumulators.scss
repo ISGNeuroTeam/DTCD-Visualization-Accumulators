@@ -1,0 +1,63 @@
+.VisualizationAccumulators {
+  padding: 10px;
+  font-family: 'Proxima Nova', sans-serif;
+  color: var(--text_main);
+
+  &,
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+
+  .Header {
+    padding-bottom: 10px;
+
+    .Title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  }
+
+  .NoData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+    color: var(--text_secondary);
+
+    .Icon {
+      color: var(--border_secondary);
+      font-size: 100px;
+    }
+  }
+
+  .BarsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+    border-left: 1px solid var(--text_secondary);
+  }
+
+  .Bar {
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+    line-height: 1.5rem;
+    color: #FDFDFD;
+
+    .Label {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .Value {
+      font-weight: 600;
+    }
+  }
+}
